@@ -15,28 +15,28 @@ public class Candidate {
 	private int age;
 	private float salaryRequirements;
 	private String selfAssessment;
-	private CandidateEducation education;
+	private CourseType courseType;
 	private CandidateStatus status;
-
-	@XmlElementWrapper(name = "histories")
-	@XmlElement(name = "history")
-	private List<CandidateHistory> history;
+	private List<Job> jobs;
+	private List<Course> courses;
 
 	public Candidate() {
 		super();
 	}
 
 	public Candidate(int id, String name, int age, float salaryRequirements,
-			String selfAssessment, CandidateEducation education,
-			CandidateStatus status) {
+			String selfAssessment, CourseType courseType,
+			CandidateStatus status, List<Job> jobs, List<Course> courses) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.age = age;
 		this.salaryRequirements = salaryRequirements;
 		this.selfAssessment = selfAssessment;
-		this.education = education;
+		this.courseType = courseType;
 		this.status = status;
+		this.jobs = jobs;
+		this.courses = courses;
 	}
 
 	public int getId() {
@@ -79,12 +79,12 @@ public class Candidate {
 		this.selfAssessment = selfAssessment;
 	}
 
-	public CandidateEducation getEducation() {
-		return education;
+	public CourseType getCourseType() {
+		return courseType;
 	}
 
-	public void setEducation(CandidateEducation education) {
-		this.education = education;
+	public void setCourseType(CourseType courseType) {
+		this.courseType = courseType;
 	}
 
 	public CandidateStatus getStatus() {
@@ -95,12 +95,20 @@ public class Candidate {
 		this.status = status;
 	}
 
-	public List<CandidateHistory> getHistory() {
-		return history;
+	public List<Job> getJobs() {
+		return jobs;
 	}
 
-	public void setHistory(List<CandidateHistory> history) {
-		this.history = history;
+	public void setJobs(List<Job> jobs) {
+		this.jobs = jobs;
+	}
+
+	public List<Course> getCourses() {
+		return courses;
+	}
+
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
 	}
 
 }
